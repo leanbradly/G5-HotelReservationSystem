@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ReservationStatusController@index');
+Route::get('/create','ReservationStatusController@create');
+Route::get('/ReservationStatus/{ReservationStatus}', 'ReservationStatusController@show');
+Route::get('/ReservationStatus/{ReservationStatus}/edit','ReservationStatusController@edit');
+
+Route::post('/create','ReservationStatusController@store');
+Route::put('/ReservationStatus/{ReservationStatus}', 'ReservationStatusController@update');
+
+Route::delete('/ReservationStatus/{ReservationStatus}','ReservationStatusController@destroy');
