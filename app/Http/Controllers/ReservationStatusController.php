@@ -25,12 +25,13 @@ class ReservationStatusController extends Controller
 
    	public function store()
    	{
-
-   		$reservationStatus = new reservationStatus;
-   		$reservationStatus->status = request()->status;
-   		$reservationStatus->description = request()->description;
-   		$reservationStatus->save();
-
+   		$validated_fields = request()->validate([
+   			'status' => 'required',
+   			'description' => 'required'
+   		]);
+   		
+   		$reservationStatus = ReservationStatus::create($validated_fields);
+   		
    		return redirect('/');
 
    	}

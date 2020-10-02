@@ -6,6 +6,7 @@
 <body>
 	<h1>Create form</h1>
 		<form action="/create" method='POST'>
+			@include('layouts.errors')
 			@csrf
 			<div class="row">
 				
