@@ -4,7 +4,7 @@
 	<title>Create form</title>
 </head>
 <body>
-	<h1>Create form</h1>
+	<h1>Create Status</h1>
 		<form action="/create" method='POST'>
 			@include('layouts.errors')
 			@csrf
